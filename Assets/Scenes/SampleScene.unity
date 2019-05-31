@@ -208,7 +208,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 211988366}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 535892046, guid: 9cc1b12c6471fe9499e8ffcb3bc98c1f, type: 3}
+  m_Script: {fileID: 313854961, guid: ace4c0b03f627a44ba696d482dc2a1ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &211988368
@@ -253,7 +253,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 410973774}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -953487674, guid: 9cc1b12c6471fe9499e8ffcb3bc98c1f, type: 3}
+  m_Script: {fileID: 685651006, guid: ace4c0b03f627a44ba696d482dc2a1ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &410973776
@@ -265,7 +265,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 410973774}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1706590772, guid: 9cc1b12c6471fe9499e8ffcb3bc98c1f, type: 3}
+  m_Script: {fileID: 1569246015, guid: ace4c0b03f627a44ba696d482dc2a1ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   SceneType: 5
@@ -387,6 +387,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3301975318531520974, guid: 21d71fe3c9450564babd9f9eb2c1bd4c,
+        type: 3}
+      propertyPath: m_Name
+      value: Test_Scene_Geometry
+      objectReference: {fileID: 0}
     - target: {fileID: 7376305390864438594, guid: 21d71fe3c9450564babd9f9eb2c1bd4c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -441,11 +446,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3301975318531520974, guid: 21d71fe3c9450564babd9f9eb2c1bd4c,
-        type: 3}
-      propertyPath: m_Name
-      value: Test_Scene_Geometry
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21d71fe3c9450564babd9f9eb2c1bd4c, type: 3}
