@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "c4991664efc5ca89b1caf713e365cf1850a1b3e7"
+    "signature": "3c79218be2b16b7ab949d3289d65b262f4d86a33"
   },
   "compilationOptions": {},
   "targets": {
@@ -9,14 +9,21 @@
     ".NETStandard,Version=v2.0/": {
       "GladMMO.Server.ZoneServer/1.0.0": {
         "dependencies": {
+          "Akka.DI.AutoFac": "1.3.9",
           "Autofac": "4.8.1",
           "GladMMO.Client.Common": "1.0.0",
+          "GladMMO.Client.ContentServer": "1.0.0",
           "GladMMO.Client.ServiceDiscovery": "1.0.0",
+          "GladMMO.Client.ZoneAuthentication": "1.0.0",
+          "GladMMO.Client.ZoneService.Server": "1.0.0",
           "GladMMO.Common": "1.0.0",
+          "GladMMO.Common.SDK": "1.0.0",
           "GladMMO.Models.Server.ZoneServer": "1.0.0",
           "GladMMO.Models.ServiceDiscovery": "1.0.0",
           "GladMMO.Network.Common": "1.0.0",
           "GladMMO.Payloads.ZoneServer": "1.0.0",
+          "GladMMO.Server.Akka": "1.0.0",
+          "GladMMO.Server.AzureServiceBus": "1.0.0",
           "GladMMO.Server.Common": "1.0.0",
           "GladMMO.Unity.Common": "1.0.0",
           "GladMMO.ZoneServer.Common": "1.0.0",
@@ -24,18 +31,60 @@
           "GladNet3.Handler.API": "3.0.46",
           "GladNet3.Serializer.ProtobufNet": "3.0.46",
           "GladNet3.Server.DotNetTcpServer": "3.0.47",
-          "Glader.Essentials.Unity": "0.0.13",
+          "Glader.Essentials.Unity": "1.0.31",
           "NETStandard.Library": "2.0.3",
+          "Newtonsoft.Json": "12.0.2",
           "Nito.AsyncEx": "5.0.0-pre-05",
-          "PostSharp.Patterns.Caching": "5.0.52",
-          "Refit": "4.6.58",
+          "Refit": "4.7.51",
           "SceneJect.Common": "3.0.31",
           "SceneJect.Editor": "3.0.31",
           "SceneJect.Metadata": "3.0.31",
+          "System.Diagnostics.DiagnosticSource": "4.6.0",
+          "Microsoft.Azure.ServiceBus": "1.0.0.0",
           "UnityEngine": "0.0.0.0"
         },
         "runtime": {
           "GladMMO.Server.ZoneServer.dll": {}
+        }
+      },
+      "Akka/1.4.0-beta2": {
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.2",
+          "System.Collections.Immutable": "1.5.0",
+          "System.ValueTuple": "4.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Akka.dll": {
+            "assemblyVersion": "1.4.0.0",
+            "fileVersion": "1.4.0.0"
+          }
+        }
+      },
+      "Akka.DI.AutoFac/1.3.9": {
+        "dependencies": {
+          "Akka": "1.4.0-beta2",
+          "Akka.DI.Core": "1.3.9",
+          "Autofac": "4.8.1",
+          "NETStandard.Library": "2.0.3"
+        },
+        "runtime": {
+          "lib/netstandard1.6/Akka.DI.AutoFac.dll": {
+            "assemblyVersion": "1.3.9.0",
+            "fileVersion": "1.3.9.0"
+          }
+        }
+      },
+      "Akka.DI.Core/1.3.9": {
+        "dependencies": {
+          "Akka": "1.4.0-beta2",
+          "Microsoft.Extensions.DependencyModel": "1.1.2",
+          "NETStandard.Library": "2.0.3"
+        },
+        "runtime": {
+          "lib/netstandard1.6/Akka.DI.Core.dll": {
+            "assemblyVersion": "1.3.9.0",
+            "fileVersion": "1.3.9.0"
+          }
         }
       },
       "Autofac/4.8.1": {
@@ -114,7 +163,7 @@
           }
         }
       },
-      "Glader.Essentials.Common/0.0.13": {
+      "Glader.Essentials.Common/1.0.31": {
         "dependencies": {
           "Autofac": "4.8.1",
           "Common.Logging": "3.4.1"
@@ -126,11 +175,11 @@
           }
         }
       },
-      "Glader.Essentials.Unity/0.0.13": {
+      "Glader.Essentials.Unity/1.0.31": {
         "dependencies": {
           "Common.Logging": "3.4.1",
           "Generic.Math": "1.0.2",
-          "Glader.Essentials.Common": "0.0.13",
+          "Glader.Essentials.Common": "1.0.31",
           "SceneJect.Common": "3.0.31",
           "SceneJect.Metadata": "3.0.31",
           "Unitysync.Async": "1.0.15"
@@ -283,6 +332,39 @@
           }
         }
       },
+      "Microsoft.DotNet.PlatformAbstractions/1.1.2": {
+        "dependencies": {
+          "System.AppContext": "4.1.0",
+          "System.Collections": "4.3.0",
+          "System.IO": "4.3.0",
+          "System.IO.FileSystem": "4.3.0",
+          "System.Reflection.TypeExtensions": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Runtime.InteropServices": "4.3.0",
+          "System.Runtime.InteropServices.RuntimeInformation": "4.0.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.DotNet.PlatformAbstractions.dll": {
+            "assemblyVersion": "1.1.2.0",
+            "fileVersion": "1.1.2.0"
+          }
+        }
+      },
+      "Microsoft.Extensions.DependencyModel/1.1.2": {
+        "dependencies": {
+          "Microsoft.DotNet.PlatformAbstractions": "1.1.2",
+          "Newtonsoft.Json": "12.0.2",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Dynamic.Runtime": "4.0.11",
+          "System.Linq": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.6/Microsoft.Extensions.DependencyModel.dll": {
+            "assemblyVersion": "1.1.2.0",
+            "fileVersion": "1.1.2.0"
+          }
+        }
+      },
       "Microsoft.NETCore.Platforms/1.1.0": {},
       "Microsoft.NETCore.Targets/1.1.0": {},
       "NETStandard.Library/2.0.3": {
@@ -290,11 +372,11 @@
           "Microsoft.NETCore.Platforms": "1.1.0"
         }
       },
-      "Newtonsoft.Json/11.0.2": {
+      "Newtonsoft.Json/12.0.2": {
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {
-            "assemblyVersion": "11.0.0.0",
-            "fileVersion": "11.0.2.21924"
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.0.2.23222"
           }
         }
       },
@@ -386,67 +468,12 @@
       },
       "Nito.Disposables/1.2.3": {
         "dependencies": {
-          "System.Collections.Immutable": "1.4.0"
+          "System.Collections.Immutable": "1.5.0"
         },
         "runtime": {
           "lib/netstandard2.0/Nito.Disposables.dll": {
             "assemblyVersion": "1.2.3.0",
             "fileVersion": "1.2.3.0"
-          }
-        }
-      },
-      "PostSharp/5.0.52": {
-        "dependencies": {
-          "PostSharp.Redist": "5.0.52"
-        }
-      },
-      "PostSharp.Patterns.Caching/5.0.52": {
-        "dependencies": {
-          "PostSharp.Patterns.Caching.Redist": "5.0.52",
-          "PostSharp.Patterns.Common": "5.0.52"
-        }
-      },
-      "PostSharp.Patterns.Caching.Redist/5.0.52": {
-        "runtime": {
-          "lib/net46/PostSharp.Patterns.Caching.dll": {
-            "assemblyVersion": "5.0.52.0",
-            "fileVersion": "5.0.52.0"
-          }
-        }
-      },
-      "PostSharp.Patterns.Common/5.0.52": {
-        "dependencies": {
-          "PostSharp": "5.0.52",
-          "PostSharp.Patterns.Common.Redist": "5.0.52"
-        }
-      },
-      "PostSharp.Patterns.Common.Redist/5.0.52": {
-        "dependencies": {
-          "PostSharp.Redist": "5.0.52",
-          "System.Runtime.Serialization.Xml": "4.3.0",
-          "System.Text.RegularExpressions": "4.3.0",
-          "System.Threading": "4.3.0",
-          "System.Threading.Thread": "4.3.0",
-          "System.Threading.ThreadPool": "4.3.0",
-          "System.Xml.XmlSerializer": "4.3.0"
-        },
-        "runtime": {
-          "lib/netstandard1.3/PostSharp.Patterns.Common.dll": {
-            "assemblyVersion": "5.0.52.0",
-            "fileVersion": "5.0.52.0"
-          }
-        }
-      },
-      "PostSharp.Redist/5.0.52": {
-        "dependencies": {
-          "NETStandard.Library": "2.0.3",
-          "System.Runtime.Serialization.Primitives": "4.3.0",
-          "System.Xml.XmlSerializer": "4.3.0"
-        },
-        "runtime": {
-          "lib/netstandard1.3/PostSharp.dll": {
-            "assemblyVersion": "5.0.52.0",
-            "fileVersion": "5.0.52.0"
           }
         }
       },
@@ -466,26 +493,32 @@
           }
         }
       },
-      "Refit/4.6.58": {
+      "Refit/4.7.51": {
         "dependencies": {
-          "Newtonsoft.Json": "11.0.2"
+          "Newtonsoft.Json": "12.0.2"
         },
         "runtime": {
           "lib/netstandard2.0/Refit.dll": {
-            "assemblyVersion": "4.6.0.0",
-            "fileVersion": "4.6.58.19393"
+            "assemblyVersion": "4.7.0.0",
+            "fileVersion": "4.7.51.16696"
           }
         }
       },
       "Reinterpret.Net/2.0.7": {
         "dependencies": {
-          "System.Runtime.CompilerServices.Unsafe": "4.5.1"
+          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
         },
         "runtime": {
           "lib/netstandard2.0/Reinterpret.Net.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
+        }
+      },
+      "runtime.native.System/4.0.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0"
         }
       },
       "SceneJect.Common/3.0.31": {
@@ -520,6 +553,25 @@
           }
         }
       },
+      "System.AppContext/4.1.0": {
+        "dependencies": {
+          "System.Runtime": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.6/System.AppContext.dll": {
+            "assemblyVersion": "4.1.0.0",
+            "fileVersion": "1.0.24212.1"
+          }
+        }
+      },
+      "System.Buffers/4.4.0": {
+        "runtime": {
+          "lib/netstandard2.0/System.Buffers.dll": {
+            "assemblyVersion": "4.0.2.0",
+            "fileVersion": "4.6.25519.3"
+          }
+        }
+      },
       "System.Collections/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0",
@@ -547,11 +599,11 @@
           }
         }
       },
-      "System.Collections.Immutable/1.4.0": {
+      "System.Collections.Immutable/1.5.0": {
         "runtime": {
           "lib/netstandard2.0/System.Collections.Immutable.dll": {
-            "assemblyVersion": "1.2.2.0",
-            "fileVersion": "4.6.25519.3"
+            "assemblyVersion": "1.2.3.0",
+            "fileVersion": "4.6.26515.6"
           }
         }
       },
@@ -594,11 +646,15 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "System.Diagnostics.Tools/4.3.0": {
+      "System.Diagnostics.DiagnosticSource/4.6.0": {
         "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.1.0",
-          "Microsoft.NETCore.Targets": "1.1.0",
-          "System.Runtime": "4.3.0"
+          "System.Memory": "4.5.3"
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {
+            "assemblyVersion": "4.0.4.0",
+            "fileVersion": "4.700.19.46214"
+          }
         }
       },
       "System.Diagnostics.Tracing/4.3.0": {
@@ -714,6 +770,27 @@
           }
         }
       },
+      "System.Memory/4.5.3": {
+        "dependencies": {
+          "System.Buffers": "4.4.0",
+          "System.Numerics.Vectors": "4.4.0",
+          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Memory.dll": {
+            "assemblyVersion": "4.0.1.1",
+            "fileVersion": "4.6.27617.2"
+          }
+        }
+      },
+      "System.Numerics.Vectors/4.4.0": {
+        "runtime": {
+          "lib/netstandard2.0/System.Numerics.Vectors.dll": {
+            "assemblyVersion": "4.1.3.0",
+            "fileVersion": "4.6.25519.3"
+          }
+        }
+      },
       "System.ObjectModel/4.0.12": {
         "dependencies": {
           "System.Collections": "4.3.0",
@@ -726,41 +803,6 @@
           "lib/netstandard1.3/System.ObjectModel.dll": {
             "assemblyVersion": "4.0.12.0",
             "fileVersion": "1.0.24212.1"
-          }
-        }
-      },
-      "System.Private.DataContractSerialization/4.3.0": {
-        "dependencies": {
-          "System.Collections": "4.3.0",
-          "System.Collections.Concurrent": "4.3.0",
-          "System.Diagnostics.Debug": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.IO": "4.3.0",
-          "System.Linq": "4.3.0",
-          "System.Reflection": "4.3.0",
-          "System.Reflection.Emit.ILGeneration": "4.3.0",
-          "System.Reflection.Emit.Lightweight": "4.3.0",
-          "System.Reflection.Extensions": "4.3.0",
-          "System.Reflection.Primitives": "4.3.0",
-          "System.Reflection.TypeExtensions": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Runtime.Serialization.Primitives": "4.3.0",
-          "System.Text.Encoding": "4.3.0",
-          "System.Text.Encoding.Extensions": "4.3.0",
-          "System.Text.RegularExpressions": "4.3.0",
-          "System.Threading": "4.3.0",
-          "System.Threading.Tasks": "4.3.0",
-          "System.Xml.ReaderWriter": "4.3.0",
-          "System.Xml.XDocument": "4.3.0",
-          "System.Xml.XmlDocument": "4.3.0",
-          "System.Xml.XmlSerializer": "4.3.0"
-        },
-        "runtime": {
-          "lib/netstandard1.3/System.Private.DataContractSerialization.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.6.24705.1"
           }
         }
       },
@@ -857,11 +899,11 @@
           "Microsoft.NETCore.Targets": "1.1.0"
         }
       },
-      "System.Runtime.CompilerServices.Unsafe/4.5.1": {
+      "System.Runtime.CompilerServices.Unsafe/4.5.2": {
         "runtime": {
           "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {
-            "assemblyVersion": "4.0.4.0",
-            "fileVersion": "0.0.0.0"
+            "assemblyVersion": "4.0.4.1",
+            "fileVersion": "4.6.26919.2"
           }
         }
       },
@@ -889,6 +931,17 @@
           "System.Runtime.Handles": "4.3.0"
         }
       },
+      "System.Runtime.InteropServices.RuntimeInformation/4.0.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "System.Reflection": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.InteropServices": "4.3.0",
+          "System.Threading": "4.3.0",
+          "runtime.native.System": "4.0.0"
+        }
+      },
       "System.Runtime.Serialization.Primitives/4.3.0": {
         "dependencies": {
           "System.Resources.ResourceManager": "4.3.0",
@@ -896,22 +949,6 @@
         },
         "runtime": {
           "lib/netstandard1.3/System.Runtime.Serialization.Primitives.dll": {
-            "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.6.24705.1"
-          }
-        }
-      },
-      "System.Runtime.Serialization.Xml/4.3.0": {
-        "dependencies": {
-          "System.IO": "4.3.0",
-          "System.Private.DataContractSerialization": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Serialization.Primitives": "4.3.0",
-          "System.Text.Encoding": "4.3.0",
-          "System.Xml.ReaderWriter": "4.3.0"
-        },
-        "runtime": {
-          "lib/netstandard1.3/System.Runtime.Serialization.Xml.dll": {
             "assemblyVersion": "4.1.2.0",
             "fileVersion": "4.6.24705.1"
           }
@@ -980,29 +1017,7 @@
           }
         }
       },
-      "System.Threading.Thread/4.3.0": {
-        "dependencies": {
-          "System.Runtime": "4.3.0"
-        },
-        "runtime": {
-          "lib/netstandard1.3/System.Threading.Thread.dll": {
-            "assemblyVersion": "4.0.1.0",
-            "fileVersion": "4.6.24705.1"
-          }
-        }
-      },
-      "System.Threading.ThreadPool/4.3.0": {
-        "dependencies": {
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Handles": "4.3.0"
-        },
-        "runtime": {
-          "lib/netstandard1.3/System.Threading.ThreadPool.dll": {
-            "assemblyVersion": "4.0.11.0",
-            "fileVersion": "4.6.24705.1"
-          }
-        }
-      },
+      "System.ValueTuple/4.5.0": {},
       "System.Xml.ReaderWriter/4.3.0": {
         "dependencies": {
           "System.Collections": "4.3.0",
@@ -1024,28 +1039,6 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.ReaderWriter.dll": {
             "assemblyVersion": "4.1.0.0",
-            "fileVersion": "4.6.24705.1"
-          }
-        }
-      },
-      "System.Xml.XDocument/4.3.0": {
-        "dependencies": {
-          "System.Collections": "4.3.0",
-          "System.Diagnostics.Debug": "4.3.0",
-          "System.Diagnostics.Tools": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.IO": "4.3.0",
-          "System.Reflection": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Text.Encoding": "4.3.0",
-          "System.Threading": "4.3.0",
-          "System.Xml.ReaderWriter": "4.3.0"
-        },
-        "runtime": {
-          "lib/netstandard1.3/System.Xml.XDocument.dll": {
-            "assemblyVersion": "4.0.12.0",
             "fileVersion": "4.6.24705.1"
           }
         }
@@ -1105,12 +1098,46 @@
           }
         }
       },
+      "FinalIK.Models/1.0.0": {
+        "runtime": {
+          "FinalIK.Models.dll": {}
+        }
+      },
+      "GladMMO.Client.Authentication/1.0.0": {
+        "dependencies": {
+          "GladMMO.Models.Authentication": "1.0.0",
+          "Refit": "4.7.51"
+        },
+        "runtime": {
+          "GladMMO.Client.Authentication.dll": {}
+        }
+      },
+      "GladMMO.Client.CharacterService/1.0.0": {
+        "dependencies": {
+          "GladMMO.Models.GameServer": "1.0.0",
+          "Refit": "4.7.51"
+        },
+        "runtime": {
+          "GladMMO.Client.CharacterService.dll": {}
+        }
+      },
       "GladMMO.Client.Common/1.0.0": {
         "dependencies": {
+          "Autofac": "4.8.1",
           "Common.Logging": "3.4.1",
           "FluentValidation": "7.6.103",
+          "GladMMO.Client.Authentication": "1.0.0",
+          "GladMMO.Client.CharacterService": "1.0.0",
+          "GladMMO.Client.NameQueryService": "1.0.0",
+          "GladMMO.Client.ServiceDiscovery": "1.0.0",
+          "GladMMO.Client.ZoneService": "1.0.0",
           "GladMMO.Common": "1.0.0",
-          "Refit": "4.6.58",
+          "GladMMO.Network.Common": "1.0.0",
+          "GladMMO.Payloads.ZoneServer": "1.0.0",
+          "GladNet3.Client.DotNetTcpClient": "3.0.46",
+          "GladNet3.Handler.API": "3.0.46",
+          "Glader.Essentials.Common": "1.0.31",
+          "Refit": "4.7.51",
           "SceneJect.Metadata": "3.0.31",
           "System.ComponentModel.Annotations": "4.5.0"
         },
@@ -1118,22 +1145,72 @@
           "GladMMO.Client.Common.dll": {}
         }
       },
+      "GladMMO.Client.ContentServer/1.0.0": {
+        "dependencies": {
+          "GladMMO.Models.ContentServer": "1.0.0",
+          "Refit": "4.7.51"
+        },
+        "runtime": {
+          "GladMMO.Client.ContentServer.dll": {}
+        }
+      },
+      "GladMMO.Client.NameQueryService/1.0.0": {
+        "dependencies": {
+          "GladMMO.Models.GameServer": "1.0.0",
+          "Nito.AsyncEx": "5.0.0-pre-05",
+          "Refit": "4.7.51"
+        },
+        "runtime": {
+          "GladMMO.Client.NameQueryService.dll": {}
+        }
+      },
       "GladMMO.Client.ServiceDiscovery/1.0.0": {
         "dependencies": {
-          "GladMMO.Client.Common": "1.0.0",
           "GladMMO.Models.ServiceDiscovery": "1.0.0",
-          "Refit": "4.6.58"
+          "Refit": "4.7.51"
         },
         "runtime": {
           "GladMMO.Client.ServiceDiscovery.dll": {}
         }
       },
+      "GladMMO.Client.ZoneAuthentication/1.0.0": {
+        "dependencies": {
+          "GladMMO.Models.Authentication": "1.0.0",
+          "GladMMO.Models.ZoneAuthentication": "1.0.0",
+          "Refit": "4.7.51"
+        },
+        "runtime": {
+          "GladMMO.Client.ZoneAuthentication.dll": {}
+        }
+      },
+      "GladMMO.Client.ZoneService/1.0.0": {
+        "dependencies": {
+          "GladMMO.Models.ServiceDiscovery": "1.0.0",
+          "GladMMO.Models.ZoneManager": "1.0.0",
+          "Refit": "4.7.51"
+        },
+        "runtime": {
+          "GladMMO.Client.ZoneService.dll": {}
+        }
+      },
+      "GladMMO.Client.ZoneService.Server/1.0.0": {
+        "dependencies": {
+          "GladMMO.Models.Server.ZoneServer": "1.0.0",
+          "GladMMO.Models.ZoneManager": "1.0.0",
+          "Refit": "4.7.51"
+        },
+        "runtime": {
+          "GladMMO.Client.ZoneService.Server.dll": {}
+        }
+      },
       "GladMMO.Common/1.0.0": {
         "dependencies": {
+          "Autofac": "4.8.1",
           "Common.Logging": "3.4.1",
           "Generic.Math": "1.0.2",
-          "Newtonsoft.Json": "11.0.2",
-          "Refit": "4.6.58",
+          "Glader.Essentials.Common": "1.0.31",
+          "Newtonsoft.Json": "12.0.2",
+          "Refit": "4.7.51",
           "Reinterpret.Net": "2.0.7",
           "protobuf-net": "2.3.7"
         },
@@ -1141,22 +1218,62 @@
           "GladMMO.Common.dll": {}
         }
       },
+      "GladMMO.Common.SDK/1.0.0": {
+        "dependencies": {
+          "FinalIK.Models": "1.0.0",
+          "GladMMO.Common": "1.0.0",
+          "GladMMO.Models.ContentServer": "1.0.0"
+        },
+        "runtime": {
+          "GladMMO.Common.SDK.dll": {}
+        }
+      },
+      "GladMMO.Models.Authentication/1.0.0": {
+        "dependencies": {
+          "GladMMO.Models.Common": "1.0.0",
+          "JetBrains.Annotations": "11.1.0",
+          "Newtonsoft.Json": "12.0.2",
+          "Refit": "4.7.51",
+          "System.ComponentModel.Annotations": "4.5.0"
+        },
+        "runtime": {
+          "GladMMO.Models.Authentication.dll": {}
+        }
+      },
       "GladMMO.Models.Common/1.0.0": {
         "dependencies": {
           "GladMMO.Common": "1.0.0",
           "JetBrains.Annotations": "11.1.0",
-          "Newtonsoft.Json": "11.0.2",
+          "Newtonsoft.Json": "12.0.2",
           "protobuf-net": "2.3.7"
         },
         "runtime": {
           "GladMMO.Models.Common.dll": {}
         }
       },
+      "GladMMO.Models.ContentServer/1.0.0": {
+        "dependencies": {
+          "GladMMO.Models.Common": "1.0.0",
+          "Newtonsoft.Json": "12.0.2"
+        },
+        "runtime": {
+          "GladMMO.Models.ContentServer.dll": {}
+        }
+      },
+      "GladMMO.Models.GameServer/1.0.0": {
+        "dependencies": {
+          "GladMMO.Models.Common": "1.0.0",
+          "Newtonsoft.Json": "12.0.2"
+        },
+        "runtime": {
+          "GladMMO.Models.GameServer.dll": {}
+        }
+      },
       "GladMMO.Models.Server.ZoneServer/1.0.0": {
         "dependencies": {
           "GladMMO.Common": "1.0.0",
           "GladMMO.Models.Common": "1.0.0",
-          "Newtonsoft.Json": "11.0.2"
+          "Newtonsoft.Json": "12.0.2"
         },
         "runtime": {
           "GladMMO.Models.Server.ZoneServer.dll": {}
@@ -1165,17 +1282,34 @@
       "GladMMO.Models.ServiceDiscovery/1.0.0": {
         "dependencies": {
           "GladMMO.Models.Common": "1.0.0",
-          "Newtonsoft.Json": "11.0.2"
+          "Newtonsoft.Json": "12.0.2"
         },
         "runtime": {
           "GladMMO.Models.ServiceDiscovery.dll": {}
         }
       },
+      "GladMMO.Models.ZoneAuthentication/1.0.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.2"
+        },
+        "runtime": {
+          "GladMMO.Models.ZoneAuthentication.dll": {}
+        }
+      },
+      "GladMMO.Models.ZoneManager/1.0.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.2"
+        },
+        "runtime": {
+          "GladMMO.Models.ZoneManager.dll": {}
+        }
+      },
       "GladMMO.Network.Common/1.0.0": {
         "dependencies": {
           "GladMMO.Common": "1.0.0",
+          "GladNet3.Client.API": "3.0.46",
           "GladNet3.Common.API": "3.0.46",
-          "Glader.Essentials.Common": "0.0.13",
+          "Glader.Essentials.Common": "1.0.31",
           "protobuf-net": "2.3.7"
         },
         "runtime": {
@@ -1192,6 +1326,26 @@
           "GladMMO.Payloads.ZoneServer.dll": {}
         }
       },
+      "GladMMO.Server.Akka/1.0.0": {
+        "dependencies": {
+          "Akka": "1.4.0-beta2",
+          "GladMMO.Common": "1.0.0",
+          "Newtonsoft.Json": "12.0.2"
+        },
+        "runtime": {
+          "GladMMO.Server.Akka.dll": {}
+        }
+      },
+      "GladMMO.Server.AzureServiceBus/1.0.0": {
+        "dependencies": {
+          "Common.Logging": "3.4.1",
+          "GladMMO.Common": "1.0.0",
+          "Microsoft.Azure.Amqp": "2.4.0.0"
+        },
+        "runtime": {
+          "GladMMO.Server.AzureServiceBus.dll": {}
+        }
+      },
       "GladMMO.Server.Common/1.0.0": {
         "runtime": {
           "GladMMO.Server.Common.dll": {}
@@ -1201,7 +1355,9 @@
         "dependencies": {
           "Autofac": "4.8.1",
           "Common.Logging": "3.4.1",
+          "GladMMO.Client.ServiceDiscovery": "1.0.0",
           "GladMMO.Network.Common": "1.0.0",
+          "SceneJect.Common": "3.0.31",
           "SceneJect.Metadata": "3.0.31"
         },
         "runtime": {
@@ -1219,11 +1375,27 @@
           "GladMMO.ZoneServer.Common.dll": {}
         }
       },
+      "Microsoft.Azure.ServiceBus/1.0.0.0": {
+        "runtime": {
+          "Microsoft.Azure.ServiceBus.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "UnityEngine/0.0.0.0": {
         "runtime": {
           "UnityEngine.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Microsoft.Azure.Amqp.Reference/2.4.0.0": {
+        "runtime": {
+          "Microsoft.Azure.Amqp.dll": {
+            "assemblyVersion": "2.4.0.0",
+            "fileVersion": "2.2.0.0"
           }
         }
       }
@@ -1234,6 +1406,27 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Akka/1.4.0-beta2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bFdqnC9/WQI9MlgGlgZPgD77sLtFzO53I5fbdZskF/2CpCi7nylPMJClk5IGGKT9zeYqJnu1oc//nNwcUMueSw==",
+      "path": "akka/1.4.0-beta2",
+      "hashPath": "akka.1.4.0-beta2.nupkg.sha512"
+    },
+    "Akka.DI.AutoFac/1.3.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+KAvEzHVTDqTZ1JxBnko3fg4aNjoyu11T9pcBjewTQtfZRGvbtDEmcmdT28rp4kQeFY7b+YPjFvJwYukj9Cgww==",
+      "path": "akka.di.autofac/1.3.9",
+      "hashPath": "akka.di.autofac.1.3.9.nupkg.sha512"
+    },
+    "Akka.DI.Core/1.3.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FC6TBQwSqWz8DYZdFpUXITN2jUk3hg4DKkatuc8c8daspM7LuATKIo7ZSzyzIxFvF8AlyXJj77nEX9tgByhoAA==",
+      "path": "akka.di.core/1.3.9",
+      "hashPath": "akka.di.core.1.3.9.nupkg.sha512"
     },
     "Autofac/4.8.1": {
       "type": "package",
@@ -1277,19 +1470,19 @@
       "path": "generic.math/1.0.2",
       "hashPath": "generic.math.1.0.2.nupkg.sha512"
     },
-    "Glader.Essentials.Common/0.0.13": {
+    "Glader.Essentials.Common/1.0.31": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-2BNFT5S6ZW7VtlPD6LKx186fNTk5LwEMTRfpuCvcVhO9ODpaxHEUX/bCxrzxH0af6IB73E4ZyfXWI5nkOwmxaQ==",
-      "path": "glader.essentials.common/0.0.13",
-      "hashPath": "glader.essentials.common.0.0.13.nupkg.sha512"
+      "sha512": "sha512-oc/rQSB55CFGQub/7ZCh5WsC7OWCV769ldA81+vOW01N9VSVJa3TD4RlWNi3ATQXOuf4aeyfilCpCGQOeLTP8g==",
+      "path": "glader.essentials.common/1.0.31",
+      "hashPath": "glader.essentials.common.1.0.31.nupkg.sha512"
     },
-    "Glader.Essentials.Unity/0.0.13": {
+    "Glader.Essentials.Unity/1.0.31": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-gSVTr5CC+vKE2sGFtE8tkjlHuXqa3qt/tScL7dV55ppkLbSwoYv8Ge70YdCGtxfWSsQWxpMOsuEnT1ui+NZ9BA==",
-      "path": "glader.essentials.unity/0.0.13",
-      "hashPath": "glader.essentials.unity.0.0.13.nupkg.sha512"
+      "sha512": "sha512-ILIJF6iBQmkYTGwdFss0SOR+v1u9scmBnP/sHnbU8sfZLkAUiHM4OH+eWpByVpg8zGnQiqHeqCg3dH3PZYNldw==",
+      "path": "glader.essentials.unity/1.0.31",
+      "hashPath": "glader.essentials.unity.1.0.31.nupkg.sha512"
     },
     "GladNet3.Client.API/3.0.46": {
       "type": "package",
@@ -1368,6 +1561,20 @@
       "path": "microsoft.csharp/4.0.1",
       "hashPath": "microsoft.csharp.4.0.1.nupkg.sha512"
     },
+    "Microsoft.DotNet.PlatformAbstractions/1.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-R1BV4p6dJQHjqPSiU3Kb8otyC0pVbk3HWVMx8yi4zQ/eZyQRQ6vli1Ron2GwXVK7+g0RELs2chy+v+v8gTAnmw==",
+      "path": "microsoft.dotnet.platformabstractions/1.1.2",
+      "hashPath": "microsoft.dotnet.platformabstractions.1.1.2.nupkg.sha512"
+    },
+    "Microsoft.Extensions.DependencyModel/1.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-v/Y38U1tsdr8s5SLpTzbiwsugSFV+JNtm2lGb0agKDt/IwmWFbAqOR/rLr/ER1u4X5cHRv/J2dU6acUzYA0MFQ==",
+      "path": "microsoft.extensions.dependencymodel/1.1.2",
+      "hashPath": "microsoft.extensions.dependencymodel.1.1.2.nupkg.sha512"
+    },
     "Microsoft.NETCore.Platforms/1.1.0": {
       "type": "package",
       "serviceable": true,
@@ -1389,12 +1596,12 @@
       "path": "netstandard.library/2.0.3",
       "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
     },
-    "Newtonsoft.Json/11.0.2": {
+    "Newtonsoft.Json/12.0.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
-      "path": "newtonsoft.json/11.0.2",
-      "hashPath": "newtonsoft.json.11.0.2.nupkg.sha512"
+      "sha512": "sha512-rTK0s2EKlfHsQsH6Yx2smvcTCeyoDNgCW7FEYyV01drPlh2T243PR2DiDXqtC5N4GDm4Ma/lkxfW5a/4793vbA==",
+      "path": "newtonsoft.json/12.0.2",
+      "hashPath": "newtonsoft.json.12.0.2.nupkg.sha512"
     },
     "Nito.AsyncEx/5.0.0-pre-05": {
       "type": "package",
@@ -1459,48 +1666,6 @@
       "path": "nito.disposables/1.2.3",
       "hashPath": "nito.disposables.1.2.3.nupkg.sha512"
     },
-    "PostSharp/5.0.52": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-9dck88tQfHWskS3Dj8OqX8ImytFHlK5vyV0C1SQ/7buP+sc1I+J1LwwLmkG04cH50fgxfPmfGXirzAKzHqj+mw==",
-      "path": "postsharp/5.0.52",
-      "hashPath": "postsharp.5.0.52.nupkg.sha512"
-    },
-    "PostSharp.Patterns.Caching/5.0.52": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-SoZcEJiMthr265oGHHcf+l+s8eFI8Xxl6w5qF/tklqG9IRln1N/8v7IZVmxfGyMYyhFx3Td6I4rASSZ56G6ZmQ==",
-      "path": "postsharp.patterns.caching/5.0.52",
-      "hashPath": "postsharp.patterns.caching.5.0.52.nupkg.sha512"
-    },
-    "PostSharp.Patterns.Caching.Redist/5.0.52": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-+HsnUbv6wRGnhYEU2MTMHA67626KNgjLl89zGZCvErp1dz/ROvPdd5Apn72AYHvyKzWmiO/saFjvYijC8V4kew==",
-      "path": "postsharp.patterns.caching.redist/5.0.52",
-      "hashPath": "postsharp.patterns.caching.redist.5.0.52.nupkg.sha512"
-    },
-    "PostSharp.Patterns.Common/5.0.52": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-00083WtSpuffCSgPwxDDBWqDeVHDVdF91r/NHaGu6VKFhRRJtMoLgUZKHoULzHzcYwaNP5uVZzX52DGY/jug0A==",
-      "path": "postsharp.patterns.common/5.0.52",
-      "hashPath": "postsharp.patterns.common.5.0.52.nupkg.sha512"
-    },
-    "PostSharp.Patterns.Common.Redist/5.0.52": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-DZOIr5nv53amPIEsIM+k87jHKYJua7q5ZJHgpNfffI/+QTxguoONg5OpDjNESU0zS32lwrF8/s0W8HEJNsaujw==",
-      "path": "postsharp.patterns.common.redist/5.0.52",
-      "hashPath": "postsharp.patterns.common.redist.5.0.52.nupkg.sha512"
-    },
-    "PostSharp.Redist/5.0.52": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-9ORTi6ZFGL4Km8yGqOxOU5C/Njso0geBWjj0jOJxwfvhJtvC1cTfh8FXvnXq0nXu+OlB30iaS4V1+qUZbnnaPQ==",
-      "path": "postsharp.redist/5.0.52",
-      "hashPath": "postsharp.redist.5.0.52.nupkg.sha512"
-    },
     "protobuf-net/2.3.7": {
       "type": "package",
       "serviceable": true,
@@ -1508,12 +1673,12 @@
       "path": "protobuf-net/2.3.7",
       "hashPath": "protobuf-net.2.3.7.nupkg.sha512"
     },
-    "Refit/4.6.58": {
+    "Refit/4.7.51": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-bkTC+ARz6bgcQmeRxzqln5xoVklUvoLMIZDoa0KUz04IWrtVYHlR46Fgfym6tuUc0i70DqRhSx3MsnbbmLpoLg==",
-      "path": "refit/4.6.58",
-      "hashPath": "refit.4.6.58.nupkg.sha512"
+      "sha512": "sha512-QQ6CBA18lvFPCGAy9c9lLSkDpGSCJhTgH5IpeiUpvrkPVOJ4ROSKwej26ulFEwYQSEIkjC3ESZ/KGHe3WbK28g==",
+      "path": "refit/4.7.51",
+      "hashPath": "refit.4.7.51.nupkg.sha512"
     },
     "Reinterpret.Net/2.0.7": {
       "type": "package",
@@ -1521,6 +1686,13 @@
       "sha512": "sha512-LLyLhqrYx4ouBa5/KT2kVUiRU1GkwruI6/MMXw8nMu0KBun5KDrNPkXWwAacetVFB2AilcUgnjWGxSUz5VaSiA==",
       "path": "reinterpret.net/2.0.7",
       "hashPath": "reinterpret.net.2.0.7.nupkg.sha512"
+    },
+    "runtime.native.System/4.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QfS/nQI7k/BLgmLrw7qm7YBoULEvgWnPI+cYsbfCVFTW8Aj+i8JhccxcFMu1RWms0YZzF+UHguNBK4Qn89e2Sg==",
+      "path": "runtime.native.system/4.0.0",
+      "hashPath": "runtime.native.system.4.0.0.nupkg.sha512"
     },
     "SceneJect.Common/3.0.31": {
       "type": "package",
@@ -1543,6 +1715,20 @@
       "path": "sceneject.metadata/3.0.31",
       "hashPath": "sceneject.metadata.3.0.31.nupkg.sha512"
     },
+    "System.AppContext/4.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3QjO4jNV7PdKkmQAVp9atA+usVnKRwI3Kx1nMwJ93T0LcQfx7pKAYk0nKz5wn1oP5iqlhZuy6RXOFdhr7rDwow==",
+      "path": "system.appcontext/4.1.0",
+      "hashPath": "system.appcontext.4.1.0.nupkg.sha512"
+    },
+    "System.Buffers/4.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-AwarXzzoDwX6BgrhjoJsk6tUezZEozOT5Y9QKF94Gl4JK91I4PIIBkBco9068Y9/Dra8Dkbie99kXB8+1BaYKw==",
+      "path": "system.buffers/4.4.0",
+      "hashPath": "system.buffers.4.4.0.nupkg.sha512"
+    },
     "System.Collections/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -1557,12 +1743,12 @@
       "path": "system.collections.concurrent/4.3.0",
       "hashPath": "system.collections.concurrent.4.3.0.nupkg.sha512"
     },
-    "System.Collections.Immutable/1.4.0": {
+    "System.Collections.Immutable/1.5.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-71hw5RUJRu5+q/geUY69gpXD8Upd12cH+F3MwpXV2zle7Bqqkrmc1JblOTuvUcgmdnUtQvBlV5e1d6RH+H2lvA==",
-      "path": "system.collections.immutable/1.4.0",
-      "hashPath": "system.collections.immutable.1.4.0.nupkg.sha512"
+      "sha512": "sha512-EXKiDFsChZW0RjrZ4FYHu9aW6+P4MCgEDCklsVseRfhoO0F+dXeMSsMRAlVXIo06kGJ/zv+2w1a2uc2+kxxSaQ==",
+      "path": "system.collections.immutable/1.5.0",
+      "hashPath": "system.collections.immutable.1.5.0.nupkg.sha512"
     },
     "System.ComponentModel/4.3.0": {
       "type": "package",
@@ -1592,12 +1778,12 @@
       "path": "system.diagnostics.debug/4.3.0",
       "hashPath": "system.diagnostics.debug.4.3.0.nupkg.sha512"
     },
-    "System.Diagnostics.Tools/4.3.0": {
+    "System.Diagnostics.DiagnosticSource/4.6.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-UUvkJfSYJMM6x527dJg2VyWPSRqIVB0Z7dbjHst1zmwTXz5CcXSYJFWRpuigfbO1Lf7yfZiIaEUesfnl/g5EyA==",
-      "path": "system.diagnostics.tools/4.3.0",
-      "hashPath": "system.diagnostics.tools.4.3.0.nupkg.sha512"
+      "sha512": "sha512-mbBgoR0rRfl2uimsZ2avZY8g7Xnh1Mza0rJZLPcxqiMWlkGukjmRkuMJ/er+AhQuiRIh80CR/Hpeztr80seV5g==",
+      "path": "system.diagnostics.diagnosticsource/4.6.0",
+      "hashPath": "system.diagnostics.diagnosticsource.4.6.0.nupkg.sha512"
     },
     "System.Diagnostics.Tracing/4.3.0": {
       "type": "package",
@@ -1655,19 +1841,26 @@
       "path": "system.linq.expressions/4.1.0",
       "hashPath": "system.linq.expressions.4.1.0.nupkg.sha512"
     },
+    "System.Memory/4.5.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3oDzvc/zzetpTKWMShs1AADwZjQ/36HnsufHRPcOjyRAAMLDlu2iD33MBI2opxnezcVUtXyqDXXjoFMOU9c7SA==",
+      "path": "system.memory/4.5.3",
+      "hashPath": "system.memory.4.5.3.nupkg.sha512"
+    },
+    "System.Numerics.Vectors/4.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UiLzLW+Lw6HLed1Hcg+8jSRttrbuXv7DANVj0DkL9g6EnnzbL75EB7EWsw5uRbhxd/4YdG8li5XizGWepmG3PQ==",
+      "path": "system.numerics.vectors/4.4.0",
+      "hashPath": "system.numerics.vectors.4.4.0.nupkg.sha512"
+    },
     "System.ObjectModel/4.0.12": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-tAgJM1xt3ytyMoW4qn4wIqgJYm7L7TShRZG4+Q4Qsi2PCcj96pXN7nRywS9KkB3p/xDUjc2HSwP9SROyPYDYKQ==",
       "path": "system.objectmodel/4.0.12",
       "hashPath": "system.objectmodel.4.0.12.nupkg.sha512"
-    },
-    "System.Private.DataContractSerialization/4.3.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-yDaJ2x3mMmjdZEDB4IbezSnCsnjQ4BxinKhRAaP6kEgL6Bb6jANWphs5SzyD8imqeC/3FxgsuXT6ykkiH1uUmA==",
-      "path": "system.private.datacontractserialization/4.3.0",
-      "hashPath": "system.private.datacontractserialization.4.3.0.nupkg.sha512"
     },
     "System.Reflection/4.3.0": {
       "type": "package",
@@ -1732,12 +1925,12 @@
       "path": "system.runtime/4.3.0",
       "hashPath": "system.runtime.4.3.0.nupkg.sha512"
     },
-    "System.Runtime.CompilerServices.Unsafe/4.5.1": {
+    "System.Runtime.CompilerServices.Unsafe/4.5.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Zh8t8oqolRaFa9vmOZfdQm/qKejdqz0J9kr7o2Fu0vPeoH3BL1EOXipKWwkWtLT1JPzjByrF19fGuFlNbmPpiw==",
-      "path": "system.runtime.compilerservices.unsafe/4.5.1",
-      "hashPath": "system.runtime.compilerservices.unsafe.4.5.1.nupkg.sha512"
+      "sha512": "sha512-wprSFgext8cwqymChhrBLu62LMg/1u92bU+VOwyfBimSPVFXtsNqEWC92Pf9ofzJFlk4IHmJA75EDJn1b2goAQ==",
+      "path": "system.runtime.compilerservices.unsafe/4.5.2",
+      "hashPath": "system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512"
     },
     "System.Runtime.Extensions/4.3.0": {
       "type": "package",
@@ -1760,19 +1953,19 @@
       "path": "system.runtime.interopservices/4.3.0",
       "hashPath": "system.runtime.interopservices.4.3.0.nupkg.sha512"
     },
+    "System.Runtime.InteropServices.RuntimeInformation/4.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hWPhJxc453RCa8Z29O91EmfGeZIHX1ZH2A8L6lYQVSaKzku2DfArSfMEb1/MYYzPQRJZeu0c9dmYeJKxW5Fgng==",
+      "path": "system.runtime.interopservices.runtimeinformation/4.0.0",
+      "hashPath": "system.runtime.interopservices.runtimeinformation.4.0.0.nupkg.sha512"
+    },
     "System.Runtime.Serialization.Primitives/4.3.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-Wz+0KOukJGAlXjtKr+5Xpuxf8+c8739RI1C+A2BoQZT+wMCCoMDDdO8/4IRHfaVINqL78GO8dW8G2lW/e45Mcw==",
       "path": "system.runtime.serialization.primitives/4.3.0",
       "hashPath": "system.runtime.serialization.primitives.4.3.0.nupkg.sha512"
-    },
-    "System.Runtime.Serialization.Xml/4.3.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-nUQx/5OVgrqEba3+j7OdiofvVq9koWZAC7Z3xGI8IIViZqApWnZ5+lLcwYgTlbkobrl/Rat+Jb8GeD4WQESD2A==",
-      "path": "system.runtime.serialization.xml/4.3.0",
-      "hashPath": "system.runtime.serialization.xml.4.3.0.nupkg.sha512"
     },
     "System.Text.Encoding/4.3.0": {
       "type": "package",
@@ -1816,19 +2009,12 @@
       "path": "system.threading.tasks.extensions/4.3.0",
       "hashPath": "system.threading.tasks.extensions.4.3.0.nupkg.sha512"
     },
-    "System.Threading.Thread/4.3.0": {
+    "System.ValueTuple/4.5.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-OHmbT+Zz065NKII/ZHcH9XO1dEuLGI1L2k7uYss+9C1jLxTC9kTZZuzUOyXHayRk+dft9CiDf3I/QZ0t8JKyBQ==",
-      "path": "system.threading.thread/4.3.0",
-      "hashPath": "system.threading.thread.4.3.0.nupkg.sha512"
-    },
-    "System.Threading.ThreadPool/4.3.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-k/+g4b7vjdd4aix83sTgC9VG6oXYKAktSfNIJUNGxPEj7ryEOfzHHhfnmsZvjxawwcD9HyWXKCXmPjX8U4zeSw==",
-      "path": "system.threading.threadpool/4.3.0",
-      "hashPath": "system.threading.threadpool.4.3.0.nupkg.sha512"
+      "sha512": "sha512-okurQJO6NRE/apDIP23ajJ0hpiNmJ+f0BwOlB/cSqTLQlw5upkf+5+96+iG2Jw40G1fCVCyPz/FhIABUjMR+RQ==",
+      "path": "system.valuetuple/4.5.0",
+      "hashPath": "system.valuetuple.4.5.0.nupkg.sha512"
     },
     "System.Xml.ReaderWriter/4.3.0": {
       "type": "package",
@@ -1836,13 +2022,6 @@
       "sha512": "sha512-GrprA+Z0RUXaR4N7/eW71j1rgMnEnEVlgii49GZyAjTH7uliMnrOU3HNFBr6fEDBCJCIdlVNq9hHbaDR621XBA==",
       "path": "system.xml.readerwriter/4.3.0",
       "hashPath": "system.xml.readerwriter.4.3.0.nupkg.sha512"
-    },
-    "System.Xml.XDocument/4.3.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-5zJ0XDxAIg8iy+t4aMnQAu0MqVbqyvfoUVl1yDV61xdo3Vth45oA2FoY4pPkxYAH5f8ixpmTqXeEIya95x0aCQ==",
-      "path": "system.xml.xdocument/4.3.0",
-      "hashPath": "system.xml.xdocument.4.3.0.nupkg.sha512"
     },
     "System.Xml.XmlDocument/4.3.0": {
       "type": "package",
@@ -1865,7 +2044,32 @@
       "path": "unitysync.async/1.0.15",
       "hashPath": "unitysync.async.1.0.15.nupkg.sha512"
     },
+    "FinalIK.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GladMMO.Client.Authentication/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GladMMO.Client.CharacterService/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "GladMMO.Client.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GladMMO.Client.ContentServer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GladMMO.Client.NameQueryService/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -1875,12 +2079,47 @@
       "serviceable": false,
       "sha512": ""
     },
+    "GladMMO.Client.ZoneAuthentication/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GladMMO.Client.ZoneService/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GladMMO.Client.ZoneService.Server/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "GladMMO.Common/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
+    "GladMMO.Common.SDK/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GladMMO.Models.Authentication/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "GladMMO.Models.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GladMMO.Models.ContentServer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GladMMO.Models.GameServer/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -1895,12 +2134,32 @@
       "serviceable": false,
       "sha512": ""
     },
+    "GladMMO.Models.ZoneAuthentication/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GladMMO.Models.ZoneManager/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "GladMMO.Network.Common/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
     "GladMMO.Payloads.ZoneServer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GladMMO.Server.Akka/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GladMMO.Server.AzureServiceBus/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -1920,7 +2179,17 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Microsoft.Azure.ServiceBus/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
     "UnityEngine/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Azure.Amqp.Reference/2.4.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
